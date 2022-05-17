@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/logica-programacao/static/lousa.png">
+    <title>Geussing game</title>
+</head>
+<body>
+
+    <script>
+        //Melhoria - pegar dados da internet e por tudo isso na tabela
+        function pulaLinha(){
+            document.write("<br><br>");
+        }
+
+        function mostra(n){
+            document.write(n);
+            pulaLinha();
+        }
+        function acertoErro(guess,right){
+            if(guess==right){
+                return "Tentativa CORRETA! Parabéns você advinhou o número.";
+            } 
+            if(guess<right){
+                    return "Tentativa ERRADA! O número que pensei era maior";
+                }else{
+                return "Tentativa ERRADA! O número que pensei era menor";
+            };
+        }
+
+        function sorteio(n){
+            return (Math.random()*n).toFixed(0);
+        }
+
+         
+        
+
+        document.write("<h2>Guessing Words</h2>");
+
+        var dificuldade = parseInt(prompt("Escolha um número"));
+        var numGuess= parseInt(prompt("Diga um numero de 0 a "+dificuldade));
+        var numRight = sorteio(dificuldade);
+
+        mostra("Dificuldade: 0 a "+dificuldade);
+        mostra("Número Sugerido: "+numGuess);
+        
+        var chances = 3;
+        var contador = 1;
+        
+        while(contador<chances){
+            if(numGuess == numRight){
+                //contador = 4;
+                break;
+            } else{
+                alert(acertoErro(numGuess,numRight)+" - Chance: "+contador+" de "+chances);
+                numGuess = parseInt(prompt("Tente Outro Numero"));
+                contador++;
+            }
+        }
+
+        mostra(acertoErro(numGuess,numRight)+": "+numRight);
+        function displayHomeButton(){
+                document.write('<div><a href="/index.html"><button> Go Home</button> </a></div>');
+            }
+        displayHomeButton();
+    </script>
+    
+</body>
+</html>

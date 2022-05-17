@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"> 
+        <title>Calculadora</title>
+        <link rel="icon" href="/static/calculator.png">
+        <style>
+            table,td,th{
+                border: 1px solid black;
+                width: 100px;
+                text-align: center;
+                border-spacing: 10px;
+                    
+            }
+            td{
+                padding: 20px;
+                border-radius: 5%;
+            }
+            .visor{
+               background-color: aliceblue;
+            }
+            td:hover{
+                background-color: #D6EEEE;
+            }
+            
+        </style>
+    
+    </head>
+    <body>
+        <h1>Calculadora</h1>
+        <table>
+            <tr class="visor" >
+                <td colspan="4"></td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+                <td>x</td>                
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>-</td>                
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>+</td>                
+            </tr>
+            <tr>
+                <td></td>
+                <td>0</td>
+                <td></td>
+                <td>=</td>                
+            </tr>
+        </table>
+        <br>
+        <div>
+            <a href="/index.html">
+                <button> Go Home</button>       
+            </a>    
+        </div>
+        <script>
+            //Tente fazer isso funcionar
+            function displayHomeButton(){
+                document.write('<div><a href="/index.html"><button> Go Home</button> </a></div>');
+            }
+        </script>
+    </body>
+</html>

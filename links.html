@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>link creator</title>
+    </head>
+    <body>
+        <h1>Link Creator</h1>     
+
+        <form action="">
+            <label for="content">Content</label><br>
+            <input type="text" id="content"><br>
+
+            <label for="url">URL</label><br>
+            <input type="text" id="url"><br>
+            <br>
+
+        </form>
+
+        <input type="submit" value="Create link" onclick="link()"><br>
+
+        <br>
+
+        <div>
+            <a href="/index.html">
+                <button> Go Home</button>       
+            </a>    
+        </div>
+        <script>
+            function link(){
+                var iText = document.getElementById("content");
+
+                var iUrl = document.getElementById("url");
+
+                var linkWrapper = document.createElement("div");
+
+                var link = document.createElement("a");
+                link.innerHTML = iText.value;
+                link.setAttribute("href",iUrl.value);
+
+                linkWrapper.appendChild(link);
+                document.body.appendChild(linkWrapper);
+
+                iText.value=null;
+                iUrl.value=null;
+            }
+            function displayHomeButton(){
+                document.write('<div><a href="/index.html"><button> Go Home</button> </a></div>');
+            }
+            displayHomeButton();
+        </script>
+    </body>
+</html>

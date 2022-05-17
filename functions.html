@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>lousa</title>
+</head>
+<body>
+    <div>
+        <button onclick="pulaLinha">+</button>
+    </div>
+    <div>
+        <input type="text" id="number">
+        <button onclick="pulaLinha">Go</button>
+    </div>
+    <script>
+        function pulaLinha(n){
+            n = arguments.length > 0 ? arguments[0] : 1;
+            for(var i = 0; i < n; i++){
+                document.write("<br>");
+            }
+            
+        }
+        function mostrar(n){
+            document.write(n);
+            pulaLinha();
+        }
+
+        function mostrarDestaque(frase){
+            mostrar("------------");
+            mostrar(frase);
+        }
+
+        function subtrair(n1, n2){
+            return n1 - n2;
+        }
+
+        function contarGeracoes(atual){
+            var dif = atual - 1500;
+            var geracoes = Math.round(dif/28);
+            return geracoes;
+        }
+
+        var k = 7;
+
+        document.write("espacamento de texto")
+        pulaLinha(2);
+        document.write("espacamento de texto")
+        pulaLinha(2)
+
+        mostrar("Olá amigos da rede bobos");
+
+        ano = 2003;
+        mostrar("Carla nasceu em "+ano+" logo tem " + (2022 - ano) + " anos");
+        mostrar("Anna nasceu em "+ano+" logo tem " + (2022 - ano) + " anos");
+
+    
+        pulaLinha(2);
+        //comentario
+
+        mostrarDestaque("OLÁ MUNDO");
+        mostrarDestaque("BEM VINDO A MATRIX");
+        mostrar("------------");
+
+        pulaLinha();
+
+        mostrar("Nossa diferença de idade é de "+ subtrair(45,37)+" anos");
+
+        
+
+        pulaLinha();
+        ano = 2022;
+        mostrar("Desde de 1500 até "+ano+" se passaram "+contarGeracoes(ano)+ " geracoes");
+        function displayHomeButton(){
+                document.write('<div><a href="/index.html"><button> Go Home</button> </a></div>');
+            }
+        displayHomeButton();
+        
+
+    </script>
+</body>   
+</html>

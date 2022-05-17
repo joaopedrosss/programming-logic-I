@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Estrutura da minha pagina (metadado)</title>
+        <link rel="icon" href="/static/favicon.png">
+
+    </head>
+    <body>
+        <h1>Alura - Lógica de Programção I</h1>
+        <h2>Sumário</h2>
+        
+                 
+    </body>
+    
+    <script>
+        function makeLinkOf(array){
+            for(var i = 0; i<array.length; i++){
+                document.write("<div><a href=/"+array[i]+">"+array[i]+"</a></div>");
+                
+            }
+        }
+
+        var links = [
+        "alert.html",
+        "calculatorDisplay.html",
+        "calendar.html",
+        "copasDoMundo.html",
+        "docWrite.html",
+        "forWhile.html",
+        "functions.html",
+        "guessGame.html",
+        "guessGamePlus.html",
+        "ifElse.html",
+        "imcInput.html",
+        "index.html",
+        "links.html",
+        "matrixRandom.html",
+        "media.html",
+        "poetry.html",
+        "progAritmetic.html",
+        "styleCss.html",
+        "table.html",
+        "tabuada.html",
+        "test.html"];
+
+        makeLinkOf(links);
+        
+    </script>
+
+</html>

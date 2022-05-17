@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/logica-programacao/static/lousa.png">
+    <title>Lousa</title>
+</head>
+<body>
+    
+    <script>
+        //MELHORAR - PEGAR DE FATO AS COPAS QU ESSE ALGUÉM VIVEU
+        
+        function pulaLinha(){
+            document.write("<br>");
+        }
+
+        function mostra(n){
+            document.write(n);
+            pulaLinha();
+        }
+
+        var nascimento = parseInt(prompt("Ano de Nascimento:"));
+
+        while(isNaN(nascimento)){
+            nascimento = parseInt(prompt("Ano de Nascimento (por Favor, digite valores numéricos): "));
+        }
+        
+
+        var anoAtual = 2022;
+        var idade = anoAtual - nascimento;
+        var copasMundo = (idade/4).toFixed(0);
+        var copasAno = nascimento;
+
+        mostra("Você nasceu em "+nascimento);
+
+        mostra("Você vivenciou "+copasMundo+" Copas do Mundo");
+        var c = 1;
+        while(c<=copasMundo){
+            copasAno +=4;
+            mostra("Copa do Mundo de "+copasAno);
+            
+            c++;
+        }
+
+        function displayHomeButton(){
+                document.write('<div><a href="/index.html"><button> Go Home</button> </a></div>');
+            }
+        displayHomeButton();
+        
+    </script>
+    
+</body>
+</html>

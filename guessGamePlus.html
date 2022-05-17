@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/static/lousa.png">
+    <title>Lousa</title>
+</head>
+<body>
+
+    <input placeholder="Digite um Número (0-10)"/>
+    <button  id="butSecreto" >Compare com o Número Secreto</button>
+    <div></div>
+
+    <script>
+        //Executado SEMPRE que for chamado
+        function verifica(){
+            var errei = true;
+            for(var i=0;i<segredos.length;i++){
+                if(input.value == segredos[i]){
+                    errei = false;
+                    break;
+                }   
+            }
+            if(errei){
+                alert("ERROU");
+            }else{
+                alert("ACERTOU!")
+                segredos = [];
+                segredos = loadSegredos(quntd);
+            }
+
+            input.value = "";
+            input.focus();
+        }
+
+        function verificaExist(aleatorio,segredos){
+            for(var i = 0; i<segredos.length;i++){
+                    if(segredos[i]==aleatorio){
+                        return true;
+                    }
+                }
+            return false;
+        }
+
+        function sorteiaSegredos(){
+            return (Math.random()*10).toFixed(0);
+        }
+
+        function loadSegredos(quntd){
+            var segredos = [];
+            var i=0;
+            while(i<quntd){
+                var aleatorio = sorteiaSegredos();
+                
+                if(verificaExist(aleatorio,segredos)){
+                    break;
+                }
+                segredos.push(aleatorio);
+                i++;
+            }
+            return segredos;
+        }
+
+        //SÓ executa uma vez
+        var quntd = 3;
+        var segredos = [];
+
+        segredos = loadSegredos(quntd);
+        
+        var input = document.querySelector("input");
+        input.focus();
+        
+        var button = document.querySelector("button");
+        button.onclick = verifica; 
+        
+        function displayHomeButton(){
+                document.write('<div><a href="/index.html"><button> Go Home</button> </a></div>');
+            }
+        displayHomeButton();
+    </script>
+    
+</body>
+</html>

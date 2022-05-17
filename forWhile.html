@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/logica-programacao/static/lousa.png">
+    <title>Lousa</title>
+</head>
+<body>
+    
+    <script>
+        function pulaLinha(){
+            document.write("<br><br>");
+        }
+
+        function mostra(n){
+            document.write(n);
+            pulaLinha();
+        }
+        function contaPar(v0,nv){
+            if(v0<=vn){
+                while(v0<=vn){
+                if(v0 % 2 == 0){
+                    mostra(v0);
+                }
+                v0=v0+1;
+                }
+            } else{
+                while(vn<=v0){
+                if(v0 % 2 == 0){
+                    mostra(v0);
+                }
+                v0=v0-1;
+                } 
+            }
+        }
+
+        //INPUT A NUMBER
+        var pin = 333;
+        var nb = prompt("Digite o pin numérico:");
+        var tentativas = 1;
+        var chance = 3;
+        while(isNaN(nb) && tentativas<=chance && nb != pin){
+            n = prompt("Tentativa" +tentativas+" de "+chance+" - Pin Incorreto - Apenas números, por favor.");
+
+            tentativas++;
+        }
+        mostra("Acesso Liberado")
+
+        //NUMEROS PARES
+        document.write("<h2>Números Pares</h2>");
+        var v0 = 100;
+        var vn = 1;
+        mostra("Inicio: "+v0);
+        mostra("Fim: "+vn);
+        contaPar(v0,vn);
+
+
+        //COPAS DO MUNDO - MELHORIA: Procuar pelos países num array ou outra estrutura de "chave-elemento"
+        document.write("<h2>Copas do Mundo</h2>");
+        anoAtual = 2022;
+        anoIncio = 1930;
+
+        for(var i = anoIncio; i<=2022; i+=4){
+            mostra("Copa do Mundo - "+i);
+        }
+    
+        
+    </script>
+    
+</body>
+</html>

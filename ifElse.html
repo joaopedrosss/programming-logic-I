@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/logica-programacao/static/lousa.png">
+    <title>Time</title>
+</head>
+<body>
+
+    <script>
+        //Melhoria - pegar dados da internet e por tudo isso na tabela
+        function pulaLinha(){
+            document.write("<br><br>");
+        }
+
+        function mostra(n){
+            document.write(n);
+            pulaLinha();
+        }
+        function rate(v,j){
+            return ((v/j)*100).toFixed(2);
+        };
+        function score(v,e){
+            var vpoint=3;
+            var epoint=1;
+            return v*vpoint + e*epoint;
+        };
+        function rateAvail(pontos){
+            if (pontos >= 70){
+                return "Ótimo";
+            } else if(pontos >= 50){
+                return "Bom";
+            } else{
+                return "Ruim";
+            }
+        };
+
+        document.write("<h2>Aproveitamento do seu Time</h2>");
+        
+        var equipe = prompt("Time:");
+        var vitorias =prompt("Vitorias");
+        var empate = prompt("Empates");
+        var jogos = prompt("Jogos");
+
+        vitorias = parseInt(vitorias);
+        jogos =  parseInt(jogos);
+        empate =  parseInt(empate);
+
+        mostra("Time: "+equipe);
+        mostra("Vitórias: "+vitorias);
+        mostra("Empates: "+empate);
+        mostra("Partidas: "+jogos);
+
+        var pontos = rate(vitorias,jogos);
+
+        mostra("Aproveitamento: "+pontos+"% - "+ rateAvail(pontos));
+        mostra("Pontuação: "+ score(vitorias,empate));
+        function displayHomeButton(){
+                document.write('<div><a href="/index.html"><button> Go Home</button> </a></div>');
+            }
+        displayHomeButton();
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Lousa</title>
+    <link rel="icon" href="/static/lousa.png">
+</head> 
+<body>
+
+    <script>
+        var nome = "Cals"
+        var nas = 2003
+        var atual = 2028
+        document.write("Hello");
+        document.write("<h2>Eu "+nome+ " tenho "+ (atual - nas) + " anos </h2>");
+
+        const idades = [23, 213, 989, 11, 90];
+        document.write("media das 4 primeiras idades é " + Math.round((idades[0]+idades[1]+idades[2]+idades[3])/4));
+
+        document.write("<br> a media de todas as idades é "+media(idades));
+
+        document.write("<h3>Consumo de Gasolina</h3>");
+        var km = 289;
+        var gas = 40;
+        document.write("Gasolina (l) = "+ gas +"<br>Distância Percorrida (km) = "+km+"<br> Consumo = "+ Math.round(km/gas) + " km/l");
+
+        function media(array){
+            var soma = 0;
+            var size = array.length;
+            for(let i = 0;i<size; i++){
+                soma = soma + array[i];
+            }
+            return soma/size;
+        }
+        function displayHomeButton(){
+                document.write('<div><a href="/index.html"><button> Go Home</button> </a></div>');
+            }
+        displayHomeButton();
+    </script>
+</body>   
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/logica-programacao/static/lousa.png">
+    <title>Lousa</title>
+</head>
+<body>
+    
+    <script>
+        function pulaLinha(){
+            document.write("<br>");
+        }
+
+        function mostra(n){
+            document.write(n);
+            pulaLinha();
+        }
+        
+        function progArt(i0,cons, n){
+            var prog= "";
+            for(var i = 0;i<n; i++){
+                prog += i0+" - ";
+                i0 = i0 + cons;
+            }
+            return prog;
+        }
+
+        function progArtSoma(i0,cons, n){
+            var soma = 0;
+            for(var i = 0;i<n; i++){
+                soma += i0;
+                i0 = i0 + cons;
+            }
+            return soma;
+        }
+
+        function progArtMedia(i0,cons, n){
+            var soma = progArtSoma(i0,cons, n);
+            return soma/n;
+        }
+
+        var i0 = 1;
+        var cons = 6;
+        var n = 8;
+
+        document.write("<h1>Progressão Aritmética</h1>");
+        mostra("Inicio: "+i0);
+        mostra("Constante: "+cons);
+        mostra("Numero de termos: "+n)
+        mostra("["+progArt(i0,cons, n)+"]");
+        mostra("SOMA dos termos: "+progArtSoma(i0,cons, n));
+        mostra("MEDIA dos termos: "+progArtMedia(i0,cons, n));
+        
+        function displayHomeButton(){
+                document.write('<div><a href="/index.html"><button> Go Home</button> </a></div>');
+            }
+        displayHomeButton();
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/logica-programacao/static/lousa.png">
+    <title>Lousa</title>
+</head>
+<body>
+    
+    <script>
+        function pulaLinha(){
+            document.write("<br>");
+        }
+
+        function mostra(n){
+            document.write(n);
+            pulaLinha();
+        }
+        
+        function mostrarTab(inc, fim){
+            
+            while(inc <= fim){
+                var tabDe = inc;
+                for(var i = 1;i<=10; i++){
+                    mostra(tabDe + " x "+ i +" = "+ i*tabDe);
+                }
+                pulaLinha();
+                inc = inc + 1;
+            }
+            document.write("<hr>");
+            
+        }
+
+        function tabRandom(){
+            
+            for(var i = 1;i<=10; i++){
+                tabDe = (Math.random()*100).toFixed(0);
+                mostra(tabDe + " x "+ i +" = "+ i*tabDe);
+            }
+            pulaLinha();
+            inc = inc + 1;
+            document.write("<hr>");
+        }
+        
+        
+        
+        document.write("<h1>Tabuadas</h1>");
+        //mostrar as tabuladas de 'inc' até a de 'fim' 
+        mostrarTab(1,1);
+        //mostra uma tabuada com valores aleatorios
+        document.write("<h1>Tabuada Aleatória</h1>");
+        tabRandom()
+
+        function displayHomeButton(){
+                document.write('<div><a href="/index.html"><button> Go Home</button> </a></div>');
+            }
+        displayHomeButton();
+        
+    </script>
+    
+</body>
+</html>

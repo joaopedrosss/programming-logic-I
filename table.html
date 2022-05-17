@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Tabela</title>
+        <link rel="icon" href="/static/table.png">
+        <style>
+            table{
+                border: 1px solid black;
+                border-collapse: collapse;
+                width: 100%;
+            }
+            td, th{
+                border: 1px solid #dddddd;
+                text-align: left;
+                padding: 8px;
+            }
+            tr:nth-child(even){
+                background-color:#dddddd;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Lista de Alunos</h1>
+        <table>
+            <caption>Legenda da tabela</caption>
+            <tr>
+                <th>Nome</th>
+                <th>Idade</th>
+                <th>Série</th>
+            </tr>
+            <tr>
+                <td>Maria</td>
+                <td>9</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>John</td>
+                <td>14</td>
+                <td>9</td>
+            </tr>
+        </table>
+
+        <br>
+        <table>
+            <caption>Vestibulandos</caption>
+            <tr>
+                <th>Nome</th>
+                <th>Situação</th>
+                <th>Colocação</th>
+            </tr>
+            <tr>
+                <td>Paulinho</td>
+                <td>Aprovado</td>
+                <td>23.o</td>
+            </tr>
+        </table>
+
+        <div>
+            <a href="/index.html">
+                <button> Go Home</button>       
+            </a>    
+        </div>
+        
+    </body>
+</html>

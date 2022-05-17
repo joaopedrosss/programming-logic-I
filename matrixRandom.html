@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/static/lousa.png">
+    <title>Lousa</title>
+</head>
+<body>
+
+    <script>
+        function pulaLinha(){
+            document.write("<br>");
+        }
+
+        function mostra(n){
+            document.write(n);
+            pulaLinha();
+        }
+        function aleatorio(n){
+            return (Math.random()*n).toFixed(0);
+        } 
+
+        var n = prompt("Números de 0 a ");
+        var termo = aleatorio(n);
+        var linhas = prompt("Linhas: ");
+        var colunas = prompt("Colunas: ");
+        mostra("Matriz "+linhas+"x"+colunas+":");
+
+        for(var i = 1; i<=linhas;i++){
+            for(var j= 1; j<=colunas;j++){
+                document.write(termo + " ")
+                termo = aleatorio(n);
+            }
+            pulaLinha();
+        }
+        function displayHomeButton(){
+                document.write('<div><a href="/index.html"><button> Go Home</button> </a></div>');
+            }
+        displayHomeButton();
+    </script>
+    
+</body>
+</html>

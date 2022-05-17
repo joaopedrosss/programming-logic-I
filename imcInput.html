@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/static/lousa.png">
+    <title>IMC Calculator</title>
+</head>
+<body>
+    <script>
+        //alimentar o algorítimo com vários dados e fazer mostrá-los numa tabela 
+
+        function pulaLinha(){
+            document.write("<br><br>");
+        }
+
+        function mostra(n){
+            document.write(n);
+            pulaLinha();
+        }
+
+        function imc(p,a){
+            //imc = Math.round(p/(a*a));
+            imc = (p/(a*a)).toFixed(2);
+            return imc;
+        }
+
+        function imcClasse(imc){
+            if(imc > 40){
+                return "Obesidade Mórbida";
+            }
+            if(imc <= 40 && imc >=30){
+                return "Obesidade Moderada";
+            }
+            if(imc <= 29.99 && imc >= 25){
+                return "Obesidade Leve";
+            }
+            if(imc <= 24.99 && imc >=20){
+                return "Normal";
+            } else{
+                return "Abaixo do Normal";
+            }
+        }
+
+        peso = prompt("Peso:"); //90
+        altura = prompt("Altura:");; //1.90
+        imc = imc(peso,altura);
+
+        document.write("<h2>IMC Calculator</h2>")
+        mostra("peso (kg): " + peso);
+        mostra("altura (m): " + altura);
+        mostra("imc: "+ imc);
+        mostra(imcClasse(imc));
+
+        function displayHomeButton(){
+                document.write('<div><a href="/index.html"><button> Go Home</button> </a></div>');
+            }
+        displayHomeButton();
+
+
+    </script>
+</body>
+</html>
